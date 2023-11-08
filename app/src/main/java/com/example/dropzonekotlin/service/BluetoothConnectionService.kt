@@ -1,4 +1,4 @@
-package com.example.dropzonekotlin
+package com.example.dropzonekotlin.service
 
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
@@ -8,8 +8,8 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.ProgressBar
 import android.widget.TextView
-import com.example.dropzonekotlin.BluetoothConnectionHelper.Companion.getPublicStorageDir
-import com.example.dropzonekotlin.BluetoothConnectionHelper.Companion.isExternalStorageWritable
+import com.example.dropzonekotlin.service.BluetoothConnectionHelper.Companion.getPublicStorageDir
+import com.example.dropzonekotlin.service.BluetoothConnectionHelper.Companion.isExternalStorageWritable
 import java.io.*
 import java.util.*
 import java.nio.ByteBuffer
@@ -92,9 +92,6 @@ class BluetoothConnectionService {
             outputStream.write(file.name.toByteArray())
             outputStream.write(fileSize.array())
 
-//            val fileSizeInBytes = file.length()
-
-            /*totalBytesSent =file.length().toInt()*/
 
             fileBytes.forEachIndexed { _, byte ->
                 outputStream.write(byte.toInt())

@@ -31,15 +31,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".SendActivity"
+                android:name=".activity.SendActivity"
                 android:screenOrientation="portrait">
         </activity>
         <activity
-                android:name=".FilePickerActivity"
+                android:name=".activity.FilePickerActivity"
                 android:screenOrientation="portrait">
         </activity>
         <activity
-                android:name=".MainActivity"
+                android:name=".activity.MainActivity"
                 android:screenOrientation="portrait"
                 android:exported="true">
             <intent-filter>

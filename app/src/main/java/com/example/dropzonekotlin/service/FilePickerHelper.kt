@@ -1,4 +1,4 @@
-package com.example.dropzonekotlin
+package com.example.dropzonekotlin.service
 
 import android.content.ContentUris
 import android.content.Context

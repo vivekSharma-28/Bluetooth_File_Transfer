@@ -1,4 +1,4 @@
-package com.example.dropzonekotlin
+package com.example.dropzonekotlin.activity
 
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothDevice.EXTRA_DEVICE
@@ -6,10 +6,11 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
-import android.provider.Settings.Global
 import kotlinx.android.synthetic.main.activity_file_selector.*
 import org.jetbrains.anko.toast
 import android.support.v7.app.AlertDialog
+import com.example.dropzonekotlin.R
+import com.example.dropzonekotlin.service.FilePickerHelper
 import java.io.File
 
 class FilePickerActivity : AppCompatActivity() {
