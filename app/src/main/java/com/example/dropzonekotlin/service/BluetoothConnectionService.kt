@@ -17,7 +17,6 @@ import java.nio.ByteBuffer
 
 class BluetoothConnectionService {
 
-
     companion object {
 
         val uuid: UUID = UUID.fromString("8989063a-c9af-463a-b3f1-f21d9b2b827b")
@@ -32,11 +31,9 @@ class BluetoothConnectionService {
 
     }
 
-
     fun startServer() {
         BluetoothServerController().start()
     }
-
 
     fun startClient(
         device: BluetoothDevice,
@@ -55,7 +52,6 @@ class BluetoothConnectionService {
 
         return success
     }
-
 
     class BluetoothClient(device: BluetoothDevice, val progressBar: ProgressBar,val progressPercent: TextView) : Thread() {
 
@@ -120,7 +116,6 @@ class BluetoothConnectionService {
         }
     }
 
-
     class BluetoothServerController : Thread() {
 
         private var cancelled: Boolean
@@ -169,7 +164,6 @@ class BluetoothConnectionService {
             this.serverSocket!!.close()
         }
     }
-
 
     class BluetoothServer(private val socket: BluetoothSocket): Thread() {
 

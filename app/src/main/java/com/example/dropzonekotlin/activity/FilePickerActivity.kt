@@ -17,9 +17,7 @@ class FilePickerActivity : AppCompatActivity() {
 
     private var device : BluetoothDevice? = null
 
-
     private var fileURI : String = ""
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +37,6 @@ class FilePickerActivity : AppCompatActivity() {
 
         file_selector_send.setOnClickListener{ send() }
     }
-
 
     private fun filePicker() {
         val mimeTypes : Array<String> = arrayOf("image/*", "video/*", "application/pdf", "audio/*")
@@ -91,7 +88,6 @@ class FilePickerActivity : AppCompatActivity() {
             finish()
         }
     }
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

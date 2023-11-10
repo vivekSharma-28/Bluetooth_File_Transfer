@@ -40,14 +40,6 @@ class MainActivity : AppCompatActivity() {
 
     private val REQUEST_ENABLE_BLUETOOTH = 1
 
-    private var MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 0
-
-    private var MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 0
-
-    private var MY_PERMISSIONS_REQUEST_READ_MEDIA_IMAGES=0
-
-    private var MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -121,7 +113,6 @@ class MainActivity : AppCompatActivity() {
         main_refresh_user_list.setOnClickListener{ refreshList() }
     }
 
-
     private val receiver = object : BroadcastReceiver() {
 
 
@@ -146,7 +137,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private val nameReceiver = object : BroadcastReceiver() {
 
         override fun onReceive(context: Context, intent: Intent) {
@@ -168,7 +158,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 
     private fun refreshList() {
         if (!isInZone) {
@@ -223,7 +212,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -245,7 +233,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun changeTextToConnected(statusTextView : TextView) {
         statusTextView.setText(R.string.connected)
         statusTextView.setTextColor(Color.GREEN)
@@ -253,14 +240,12 @@ class MainActivity : AppCompatActivity() {
         main_enter_zone.setText(R.string.exitZone)
     }
 
-
     private fun changeTextToDisconnected(statusTextView : TextView) {
         statusTextView.setText(R.string.disconnected)
         statusTextView.setTextColor(Color.RED)
 
         main_enter_zone.setText(R.string.enterZone)
     }
-
 
     private fun enterTheZone() {
         if (isInZone) { exitTheZone() }
@@ -281,7 +266,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun exitTheZone() {
         BluetoothConnectionService.BluetoothServerController().cancel()
         m_bluetoothAdapter!!.cancelDiscovery()
@@ -292,7 +276,6 @@ class MainActivity : AppCompatActivity() {
         changeTextToDisconnected(status_title)
         isInZone = false
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

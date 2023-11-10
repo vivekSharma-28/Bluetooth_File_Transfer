@@ -11,10 +11,9 @@ import android.provider.MediaStore
 
 class FilePickerHelper {
 
-
     companion object {
 
-         fun getPath(context: Context, uri: Uri): String? {
+        fun getPath(context: Context, uri: Uri): String? {
 
             if (DocumentsContract.isDocumentUri(context, uri)) {
                 if (isExternalStorageDocument(uri)) {

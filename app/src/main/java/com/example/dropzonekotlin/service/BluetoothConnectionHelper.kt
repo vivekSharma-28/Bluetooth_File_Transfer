@@ -10,24 +10,18 @@ class BluetoothConnectionHelper {
 
         const val MEDIA_TYPE_UNKNOWN = 0
 
-
         const val MEDIA_TYPE_IMAGE = 1
-
 
         const val MEDIA_TYPE_VIDEO = 2
 
-
         const val MEDIA_TYPE_PDF = 3
 
-
         const val MEDIA_TYPE_AUDIO = 4
-
 
         fun isExternalStorageWritable(): Boolean {
             val state = Environment.getExternalStorageState()
             return Environment.MEDIA_MOUNTED == state
         }
-
 
         fun getPublicStorageDir(fileName: String): File {
             val mediaType = getFileType(fileName)
@@ -41,7 +35,6 @@ class BluetoothConnectionHelper {
             }
             return File(Environment.getExternalStoragePublicDirectory(directoryType), fileName)
         }
-
 
         private fun getFileType(fileName: String): Int {
             var extension: String? = null
